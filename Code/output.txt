@@ -1,0 +1,96 @@
+g++ -O2 -Wall -I. -g -std=c++2a application.cpp dist.cpp osm.cpp tinyxml2.cpp tests.cpp  -lgtest -lgtest_main -lpthread -o osm_tests
+valgrind ./osm_tests --gtest_filter="Dijkstra.*" --gtest_color=yes
+Running main() from ./googletest/src/gtest_main.cc
+[0;33mNote: Google Test filter = Dijkstra.*
+[m[0;32m[==========] [mRunning 9 tests from 1 test suite.
+[0;32m[----------] [mGlobal test environment set-up.
+[0;32m[----------] [m9 tests from Dijkstra
+[0;32m[ RUN      ] [mDijkstra.StartTargetSame
+[0;32m[       OK ] [mDijkstra.StartTargetSame (8 ms)
+[0;32m[ RUN      ] [mDijkstra.Unreachable
+currentVertex: 2
+ENDED ONE LOOP
+[0;32m[       OK ] [mDijkstra.Unreachable (9 ms)
+[0;32m[ RUN      ] [mDijkstra.BasicLineGraph
+currentVertex: 0
+ENDED ONE LOOP
+currentVertex: 1
+ENDED ONE LOOP
+currentVertex: 2
+[0;32m[       OK ] [mDijkstra.BasicLineGraph (4 ms)
+[0;32m[ RUN      ] [mDijkstra.BasicLineGraphWithEndNodesExcluded
+currentVertex: 0
+ENDED ONE LOOP
+currentVertex: 1
+ENDED ONE LOOP
+currentVertex: 2
+[0;32m[       OK ] [mDijkstra.BasicLineGraphWithEndNodesExcluded (2 ms)
+[0;32m[ RUN      ] [mDijkstra.BasicLineGraphSkipNodes
+currentVertex: 0
+ENDED ONE LOOP
+currentVertex: 10
+currentVertex: 1
+ENDED ONE LOOP
+currentVertex: 2
+[0;32m[       OK ] [mDijkstra.BasicLineGraphSkipNodes (5 ms)
+[0;32m[ RUN      ] [mDijkstra.SmallTest
+currentVertex: 0
+ENDED ONE LOOP
+currentVertex: 1
+ENDED ONE LOOP
+currentVertex: 2
+ENDED ONE LOOP
+currentVertex: 3
+ENDED ONE LOOP
+currentVertex: 4
+[0;32m[       OK ] [mDijkstra.SmallTest (2 ms)
+[0;32m[ RUN      ] [mDijkstra.ThatOneGraphFromLecture_Maybe
+currentVertex: 0
+ENDED ONE LOOP
+currentVertex: 2
+ENDED ONE LOOP
+currentVertex: 1
+ENDED ONE LOOP
+currentVertex: 3
+ENDED ONE LOOP
+currentVertex: 5
+ENDED ONE LOOP
+currentVertex: 6
+ENDED ONE LOOP
+currentVertex: 7
+ENDED ONE LOOP
+currentVertex: 4
+[0;32m[       OK ] [mDijkstra.ThatOneGraphFromLecture_Maybe (4 ms)
+[0;32m[ RUN      ] [mDijkstra.YetAnotherSmallTest
+currentVertex: 0
+ENDED ONE LOOP
+currentVertex: 1
+ENDED ONE LOOP
+currentVertex: 2
+ENDED ONE LOOP
+currentVertex: 3
+ENDED ONE LOOP
+currentVertex: 4
+ENDED ONE LOOP
+currentVertex: 5
+[0;32m[       OK ] [mDijkstra.YetAnotherSmallTest (2 ms)
+[0;32m[ RUN      ] [mDijkstra.YouThoughtItWasDoneDidntYou
+currentVertex: 4
+ENDED ONE LOOP
+currentVertex: 1
+ENDED ONE LOOP
+currentVertex: 0
+ENDED ONE LOOP
+currentVertex: 3
+ENDED ONE LOOP
+currentVertex: 2
+ENDED ONE LOOP
+currentVertex: 5
+ENDED ONE LOOP
+currentVertex: 6
+[0;32m[       OK ] [mDijkstra.YouThoughtItWasDoneDidntYou (2 ms)
+[0;32m[----------] [m9 tests from Dijkstra (45 ms total)
+
+[0;32m[----------] [mGlobal test environment tear-down
+[0;32m[==========] [m9 tests from 1 test suite ran. (61 ms total)
+[0;32m[  PASSED  ] [m9 tests.
